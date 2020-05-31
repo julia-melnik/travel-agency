@@ -7,7 +7,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setOptions: option => dispatch(setOrderOption(option)),
+  setOrderOption: option => dispatch(setOrderOption(option)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrderForm); //odpowiedzialne za połączenie komponenta App z magazynem
