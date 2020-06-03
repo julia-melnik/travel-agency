@@ -11,7 +11,7 @@ const OrderOptionIcons = ({ values, required, setOptionValue, currentValue }) =>
       <div
         className={styles.dropdown}
         value={currentValue}
-        onChange={() => setOptionValue('')}
+        onChange={() => setOptionValue('')} //dlaczego przekazujemy pusty ciag znakow 
       >
         <Icon name={'times-circle'} />
         none

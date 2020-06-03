@@ -24,7 +24,7 @@ class OrderForm extends React.Component {
           </Col>
         )}
         <Col xs={12}>
-          <OrderSummary tripCost={tripCost} options={options} />
+          <OrderSummary tripCost={tripCost} options={options} /> 
         </Col>
       </Row>
 

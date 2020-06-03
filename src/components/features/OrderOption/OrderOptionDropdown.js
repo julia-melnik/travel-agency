@@ -9,6 +9,8 @@ const OrderOptionDropdown = ({values, required, currentValue, setOptionValue}) =
     className={styles.dropdown}
     value={currentValue}
     onChange={event => setOptionValue(event.currentTarget.value)}
+    //do eventu zmiany wartości (onChange) przypisaliśmy funkcję strzałkową. Ta funkcja przyjmuje event jako argument
+    // i zwraca wywołanie funkcji setOptionValue, której argumentem jest wartość elementu.
   >
     {required ? '' : (
       <option key='null' value=''>---</option>

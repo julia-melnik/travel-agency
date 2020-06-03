@@ -3,7 +3,7 @@ import OrderForm from './OrderForm.js';
 import { getOrderOptions, setOrderOption } from '../../../redux/orderRedux';
 
 const mapStateToProps = (state) => ({ 
-  options: getOrderOptions(state), //dlaczego  options, a nie order . nie ma propsow, dlatego ze 
+  options: getOrderOptions(state), 
 });
 
 const mapDispatchToProps = (dispatch) => ({
