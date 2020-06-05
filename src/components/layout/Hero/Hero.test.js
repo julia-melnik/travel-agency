@@ -4,7 +4,7 @@ import Hero from './Hero';
 
 describe('Component Hero', () => { //służy do zgrupowania kilku testów. 
   it('should render without crashing', () => { //it służy do zdefiniowania pojedynczego testu,
-    const component = shallow(<Hero titleText='Lorem ipsum' imageSrc='image' />);
+    const component = shallow(<Hero titleText='Lorem ipsum' imageSrc='image' />);//
     expect(component).toBeTruthy(); //expect sprawdza, czy otrzymany wynik jest prawdziwy.
     console.log(component.debug());
   });
@@ -22,6 +22,7 @@ describe('Component Hero', () => { //służy do zgrupowania kilku testów.
     expect(renderedTitle).toEqual(expectedTitle);
     expect(component.find('.image').prop('src')).toEqual(expectedImage);
   });
+
   it('renders correct classNames', () => {
     const mockVariants = 'small dummy';
     const component = shallow(<Hero titleText='Lorem' imageSrc='image.jpg' variant={mockVariants} />);
@@ -29,4 +30,5 @@ describe('Component Hero', () => { //służy do zgrupowania kilku testów.
     expect(component.hasClass('small')).toBe(true);
     expect(component.hasClass('dummy')).toBe(true);
   });
+  
 });
