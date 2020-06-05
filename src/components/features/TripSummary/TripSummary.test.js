@@ -11,7 +11,7 @@ describe('Component TripSummary', () => {
     expect(renderedLink).toEqual(`/trip/${id}`);
   });
 
-  it('should render correct src and alt for image', () => { //sprawdza, czy obrazek otrzymuje poprawny adres z propsa:
+  it('should render correct src and alt for image', () => { //sprawdza, czy obrazek otrzymuje poprawny dane z propsa
     const expectedName = 'TestName';
     const expectedImage = 'TestName.jpg';
     const component = shallow(<TripSummary src={expectedImage} alt={expectedName} />);
@@ -31,7 +31,7 @@ describe('Component TripSummary', () => {
     expect(() => shallow(<TripSummary />)).toThrow();
   });
 
-  it('should render tags and span', () => { //sprawdza, czy obrazek otrzymuje poprawny adres z propsa:
+  it('should render tags and span', () => { 
     const expectedTags = ['tag1', 'tag2', 'tag3'];
     const component = shallow(<TripSummary tags={expectedTags} />); 
     expect(component.find('.tags span').at(0).text()).toEqual(expectedTags[0]);
