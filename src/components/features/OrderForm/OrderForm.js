@@ -9,13 +9,13 @@ import { formatPrice } from '../../../utils/formatPrice';
 import { calculateTotal } from '../../../utils/calculateTotal';
 import settings from '../../../data/settings';
 
-const sendOrder = (options, tripCost, tripName, tripId, countryCode ) => {
+const sendOrder = (options, tripCost, tripName, tripId, countryCode) => {
   const totalCost = formatPrice(calculateTotal(tripCost, options));
 
   const payload = {
     ...options,
     totalCost,
-    tripName, 
+    tripName,
     tripId,
     countryCode,
 
@@ -53,7 +53,8 @@ class OrderForm extends React.Component {
 
   render() {
 
-    const { tripCost, options, setOrderOption,  tripName, tripId, countryCode } = this.props;
+    const { tripCost, options, setOrderOption, tripName, tripId, countryCode } = this.props;
+    const { name, contact } = options;
     return (
       <Grid>
         <Row>
@@ -64,7 +65,14 @@ class OrderForm extends React.Component {
           )}
           <Col xs={12}>
             <OrderSummary tripCost={tripCost} options={options} />
-            <Button onClick={() => sendOrder(options, tripCost, tripName, tripId, countryCode)}>Order now!</Button>
+
+            {(name === '' || contact === '') ? (
+              <p>Fill out name and contact fields</p>
+            ) : (
+              <Button onClick={() => sendOrder(options, tripCost, tripName, tripId, countryCode)}>Order now!</Button>
+            )}
+
+
           </Col>
         </Row>
       </Grid>
