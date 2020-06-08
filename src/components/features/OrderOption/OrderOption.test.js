@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 
 
 describe('Component OrderOption', () => {
-  it('should render without crashing', () => {
+  it('should render without crashing', () => { //czy komponent się renderuje. 
     const expectedName = 'name';
     const expectedType = 'type';
     const component = shallow(<OrderOption name={expectedName} type={expectedType} />);
@@ -59,12 +59,13 @@ const mockPropsForType = { //zawiera propsy istotne tylko dla konkretnego typu o
   date: {},
 };
 
-const testValue = mockProps.values[1].id; //odwoluje sie do  id 2-go obiektu 
+const testValue = mockProps.values[1].id; 
 const testValueNumber = 3;
 
 for (let type in optionTypes) {
   describe(`Component OrderOption with type=${type}`, () => {
     /* test setup - Dodamy tutaj operacje które będą wykonywane przed każdym testem */
+
     let component;
     let subcomponent;
     let renderedSubcomponent;
