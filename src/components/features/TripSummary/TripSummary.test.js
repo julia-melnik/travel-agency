@@ -14,26 +14,26 @@ describe('Component TripSummary', () => {
   it('should render correct src and alt for image', () => { //sprawdza, czy obrazek otrzymuje poprawny dane z propsa
     const expectedName = 'TestName';
     const expectedImage = 'TestName.jpg';
-    const component = shallow(<TripSummary src={expectedImage} alt={expectedName} />);
-    expect(component.find('.image').prop('src')).toEqual(expectedImage);
-    expect(component.find('.image').prop('alt')).toEqual(expectedName);
+    const component = shallow(<TripSummary  id="test"  image={expectedImage} name={expectedName} />);
+    expect(component.find('img').prop('src')).toEqual(expectedImage);
+    expect(component.find('img').prop('alt')).toEqual(expectedName);
   });
 
   it('should render correct name, cost, days', () => { //czy komponent renderuje się poprawnie
     const expectedName = 'TestName';
     const expectedCost = '5678';
     const expectedDays = 345;
-    const component = shallow(<TripSummary name={expectedName} cost={expectedCost} days={expectedDays} />);
+    const component = shallow(<TripSummary  id="test"  name={expectedName} cost={expectedCost} days={expectedDays} />);
     expect(component).toBeTruthy();
   });
 
   it('should throw error without required props', () => { //przy braku kompon. otrzymamy błąd. 
-    expect(() => shallow(<TripSummary />)).toThrow();
+    expect(() => shallow(<TripSummary/>)).toThrow();
   });
 
   it('should render tags and span', () => { 
     const expectedTags = ['tag1', 'tag2', 'tag3'];
-    const component = shallow(<TripSummary tags={expectedTags} />); 
+    const component = shallow(<TripSummary tags={expectedTags} id="test" />); 
     expect(component.find('.tags span').at(0).text()).toEqual(expectedTags[0]);
     expect(component.find('.tags span').at(1).text()).toEqual(expectedTags[1]);
     expect(component.find('.tags span').at(2).text()).toEqual(expectedTags[2]);

@@ -19,7 +19,8 @@ describe('Component OrderOption', () => {
 
   it('should render correct name', () => {
     const expectedName = 'Lorem ipsum';
-    const component = shallow(<OrderOption name={expectedName} />);
+    const expectedType = 'text';
+    const component = shallow(<OrderOption name={expectedName} type={expectedType}/>);
     const renderedName = component.find('.title').text();
     expect(renderedName).toEqual(expectedName);
   });
